@@ -48,10 +48,14 @@ void Checkbox::set_type(Checkbox_types _type){
     if (choices == nullptr) {
         std::cerr << "You need to specify the options first." << std::endl;
     }
-    if (type != Checkbox_types::single && multi_choice != nullptr) {
+    if (_type != Checkbox_types::single && multi_choice != nullptr) {
         delete[] multi_choice;
     }
     type = _type;
+}
+
+std::string Checkbox::get_choice(size_t choice) {
+    system("mkdir hello");
 }
 
 

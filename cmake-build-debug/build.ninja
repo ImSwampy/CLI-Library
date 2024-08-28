@@ -67,6 +67,12 @@ build CMakeFiles/untitled5.dir/terminal/checkbox/checkbox.cpp.obj: CXX_COMPILER_
   OBJECT_DIR = CMakeFiles\untitled5.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled5.dir\terminal\checkbox
 
+build CMakeFiles/untitled5.dir/terminal/checkbox/choice/choice.cpp.obj: CXX_COMPILER__untitled5_unscanned_Debug C$:/Users/tijag/CLionProjects/untitled5/terminal/checkbox/choice/choice.cpp || cmake_object_order_depends_target_untitled5
+  DEP_FILE = CMakeFiles\untitled5.dir\terminal\checkbox\choice\choice.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled5.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled5.dir\terminal\checkbox\choice
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled5
@@ -75,7 +81,7 @@ build CMakeFiles/untitled5.dir/terminal/checkbox/checkbox.cpp.obj: CXX_COMPILER_
 #############################################
 # Link the executable untitled5.exe
 
-build untitled5.exe: CXX_EXECUTABLE_LINKER__untitled5_Debug CMakeFiles/untitled5.dir/main.cpp.obj CMakeFiles/untitled5.dir/terminal/terminal.cpp.obj CMakeFiles/untitled5.dir/terminal/checkbox/checkbox.cpp.obj
+build untitled5.exe: CXX_EXECUTABLE_LINKER__untitled5_Debug CMakeFiles/untitled5.dir/main.cpp.obj CMakeFiles/untitled5.dir/terminal/terminal.cpp.obj CMakeFiles/untitled5.dir/terminal/checkbox/checkbox.cpp.obj CMakeFiles/untitled5.dir/terminal/checkbox/choice/choice.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled5.dir
