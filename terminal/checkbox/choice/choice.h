@@ -2,22 +2,23 @@
 #define CHOICE_H
 
 #include <iostream>
+#include <fstream>
 
 class Choice {
 public:
     // Constructors
     Choice();
-    Choice(std::string name);
-    Choice(std::string name, std::string description);
-    Choice(std::string name, std::string description, std::string path_to_script);
+    Choice(std::string _name);
+    Choice(std::string _name, std::string _description);
+    Choice(std::string _name, std::string _description, std::string _path_to_script);
 
     void load_script(std::string path_to_file);
     void execute();
 
     // Setter
-    void set_name(std::string name);
-    void set_description(std::string name);
-    void set_script(std::string name);
+    void set_name(std::string _name);
+    void set_description(std::string _name);
+    void set_script(std::string _name);
 
     // Getter
     std::string get_name();
