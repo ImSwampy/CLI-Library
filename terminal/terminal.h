@@ -9,6 +9,13 @@
 #include "systems.h"
 #include "checkbox/checkbox.h"
 
+typedef enum {
+    DOWN,
+    UP,
+    SPACE,
+    ENTER,
+} Keys;
+
 class Terminal {
 public:
     Terminal();
@@ -16,7 +23,7 @@ public:
     static void print(Checkbox checkbox);
     static void println(std::string text);
     static void clear();
-    void detect_kb_input();
+    Keys detect_kb_input(bool _continue = true);
 private:
     Checkbox *checkbox = nullptr;
     unsigned cursor_pos[2] = {0, 0};

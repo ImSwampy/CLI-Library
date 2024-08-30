@@ -5,5 +5,7 @@
 
 int main() {
     Terminal terminal;
-    terminal.detect_kb_input();
+    do {
+        std::cout << terminal.detect_kb_input() << std::endl;
+    } while (terminal.detect_kb_input() != Keys::ENTER);
 }
