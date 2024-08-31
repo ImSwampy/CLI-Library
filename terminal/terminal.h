@@ -7,7 +7,7 @@
 
 
 #include "systems.h"
-#include "checkbox/checkbox.h"
+#include "input/checkbox/checkbox.h"
 
 typedef enum {
     DOWN,
@@ -19,10 +19,10 @@ typedef enum {
 class Terminal {
 public:
     Terminal();
-    static void print(std::string text);
-    static void print(Checkbox checkbox);
-    static void println(std::string text);
-    static void clear();
+    void print(std::string text);
+    void print(class Checkbox &checkbox);
+    void println(std::string text);
+    void clear();
     Keys detect_kb_input(bool _continue = true);
 private:
     Checkbox *checkbox = nullptr;

@@ -1,4 +1,4 @@
-#include "choice.h"
+    #include "choice.h"
 
 Choice::Choice() {
     name = "Name here";
@@ -52,6 +52,14 @@ void Choice::set_name(std::string _name) {
     if (!_name.empty()) {
         name = _name;
     }
+}
+
+void Choice::select() {
+    selected = !selected;
+}
+
+bool Choice::is_selected() {
+    return selected;
 }
 
 

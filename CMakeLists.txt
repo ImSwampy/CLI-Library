@@ -7,7 +7,7 @@ add_executable(untitled5 main.cpp
         terminal/terminal.cpp
         terminal/terminal.h
         terminal/systems.h
-        terminal/checkbox/checkbox.cpp
-        terminal/checkbox/checkbox.h
-        terminal/checkbox/choice/choice.cpp
-        terminal/checkbox/choice/choice.h)
+        terminal/input/checkbox/checkbox.cpp
+        terminal/input/checkbox/checkbox.h
+        terminal/input/choice/choice.cpp
+        terminal/input/choice/choice.h)

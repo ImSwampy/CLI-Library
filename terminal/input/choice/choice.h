@@ -15,10 +15,11 @@ public:
     void load_script(std::string path_to_file);
     void execute();
 
-    // Setter
     void set_name(std::string _name);
     void set_description(std::string _name);
     void set_script(std::string _name);
+    void select();
+    bool is_selected();
 
     // Getter
     std::string get_name();
@@ -27,6 +28,7 @@ private:
     std::string name;
     std::string script;
     std::string description;
+    bool selected = false;
 };
 
 
