@@ -1,3 +1,0 @@
-C:\Users\Swampy\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\untitled5.dir/objects.a
-C:\Users\Swampy\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\untitled5.dir/objects.a @CMakeFiles\untitled5.dir\objects1.rsp
-C:\Users\Swampy\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\untitled5.dir/objects.a -Wl,--no-whole-archive -o untitled5.exe -Wl,--out-implib,libuntitled5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\untitled5.dir\linkLibs.rsp

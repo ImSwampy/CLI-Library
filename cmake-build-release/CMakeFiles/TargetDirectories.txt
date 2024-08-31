@@ -1,3 +1,0 @@
-C:/Users/Swampy/CLionProjects/CLI-Library/cmake-build-release/CMakeFiles/untitled5.dir
-C:/Users/Swampy/CLionProjects/CLI-Library/cmake-build-release/CMakeFiles/edit_cache.dir
-C:/Users/Swampy/CLionProjects/CLI-Library/cmake-build-release/CMakeFiles/rebuild_cache.dir

@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 project(untitled5)
 
-set(BUILD_SHARED_LIBS OFF)
 set(CMAKE_CXX_STANDARD 26)
 
 add_executable(untitled5 main.cpp
@@ -12,9 +11,3 @@ add_executable(untitled5 main.cpp
         terminal/input/checkbox/checkbox.h
         terminal/input/choice/choice.cpp
         terminal/input/choice/choice.h)
-
-target_include_directories(untitled5 PRIVATE
-        ${PROJECT_SOURCE_DIR}/terminal
-        ${PROJECT_SOURCE_DIR}/terminal/input/checkbox
-        ${PROJECT_SOURCE_DIR}/terminal/input/choice
-)
