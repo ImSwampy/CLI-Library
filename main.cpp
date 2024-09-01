@@ -36,8 +36,8 @@ int main() {
 
     */
 
-    TextColor("nigga", FG_BLACK, BG_BLACK, true);
-    std::cout << "gmqsdqsdqs" << std::endl;
+    TextColor("just testing", FG_BLACK, BG_BLACK, true);
+    std::cout << "fr" << std::endl;
     std::cin.ignore();
     return 0;
 
