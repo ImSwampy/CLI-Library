@@ -1,4 +1,7 @@
 #include <iostream>
+#include <windows.h>
+#include "terminal/utils/colors/color.h"
+
 
 #include "terminal/terminal.h"
 
@@ -30,5 +33,11 @@ int main() {
         terminal.print(checkbox);
     } while (terminal.detect_kb_input() != Keys::ENTER);
 
+    BackgroundColor(TextColor("nigga", FG_BLUE, true), BG_BLUE);
+    std::cout << "gmqsdqsdqs";
+    std::cin.ignore();
+
     return 0;
+
+
 }

@@ -10,4 +10,6 @@ add_executable(untitled5 main.cpp
         terminal/input/checkbox/checkbox.cpp
         terminal/input/checkbox/checkbox.h
         terminal/input/choice/choice.cpp
-        terminal/input/choice/choice.h)
+        terminal/input/choice/choice.h
+        terminal/utils/colors/color.cpp
+        terminal/utils/colors/color.h)
