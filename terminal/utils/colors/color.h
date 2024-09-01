@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <iostream>
+#include <variant>
 
 const typedef enum {
     FG_BLACK = 0x0,
@@ -27,7 +28,7 @@ const typedef enum {
     BG_ORANGE = BACKGROUND_RED | BACKGROUND_GREEN,
 } Background;
 
-void TextColor(std::string text, Foreground color, bool newline = false) {
+inline void TextColor(std::string text, Foreground color, Background background = BG_BLACK, bool newline = false) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, color);
     std::cout << text;

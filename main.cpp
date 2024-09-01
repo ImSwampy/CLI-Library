@@ -6,6 +6,7 @@
 #include "terminal/terminal.h"
 
 int main() {
+    /*
     Terminal terminal;
     Checkbox checkbox;
     Choice choice1;
@@ -33,10 +34,11 @@ int main() {
         terminal.print(checkbox);
     } while (terminal.detect_kb_input() != Keys::ENTER);
 
-    BackgroundColor(TextColor("nigga", FG_BLUE, true), BG_BLUE);
-    std::cout << "gmqsdqsdqs";
-    std::cin.ignore();
+    */
 
+    TextColor("nigga", FG_BLACK, BG_BLACK, true);
+    std::cout << "gmqsdqsdqs" << std::endl;
+    std::cin.ignore();
     return 0;
 
 
