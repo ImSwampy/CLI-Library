@@ -28,9 +28,9 @@ void Checkbox::select(int choice_index) {
 void Checkbox::display_checkbox() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            std::cout << SELECTED;
+            std::cout << SELECTED << " ";
         } else {
-            std::cout << NOT_SELECTED;
+            std::cout << NOT_SELECTED << " ";
         }
         if (i == hovered) {
             std::cout << choices[i].get_name() << "\t<-" << std::endl;

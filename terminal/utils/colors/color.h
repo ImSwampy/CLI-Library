@@ -1,11 +1,13 @@
-
 #ifndef UNTITLED5_COLOR_H
 #define UNTITLED5_COLOR_H
 
-#include <windows.h>
-#include <iostream>
-#include <variant>
 
+#include <iostream>
+#include "../../systems/systems.h"
+
+#if defined(OS_WINDOWS)
+
+#include <windows.h>
 const typedef enum {
     FG_BLACK = 0x0,
     FG_RED = FOREGROUND_RED,
@@ -15,7 +17,7 @@ const typedef enum {
     FG_YELLOW = 0x6,
     FG_WHITE = 0x7,
     FG_ORANGE = FOREGROUND_RED | FOREGROUND_GREEN,
-} Foreground;
+} Win_Foreground;
 
 const typedef enum {
     BG_BLACK = 0x00,
@@ -26,9 +28,9 @@ const typedef enum {
     BG_YELLOW = 0x60,
     BG_WHITE = 0x70,
     BG_ORANGE = BACKGROUND_RED | BACKGROUND_GREEN,
-} Background;
+} Win_Background;
 
-inline void TextColor(std::string text, Foreground color, Background background = BG_BLACK, bool newline = false) {
+inline void Win_TextColor(std::string text, Win_Foreground color, Win_Background background = BG_BLACK, bool newline = false) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, color);
     std::cout << text;
@@ -36,16 +38,12 @@ inline void TextColor(std::string text, Foreground color, Background background 
     SetConsoleTextAttribute(hConsole, 0x7 | 0x00);
 }
 
-void BackgroundColor(void *TextColor, Background color) {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, color);
-    TextColor;
-    SetConsoleTextAttribute(hConsole, 0x7 | 0x00);
-}
-
 class Color {
 
 };
 
+#elif (OS == LINUX)
+
+#endif
 
 #endif //UNTITLED5_COLOR_H

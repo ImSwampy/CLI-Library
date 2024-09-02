@@ -1,8 +1,7 @@
 #include <iostream>
-#include <windows.h>
+#include <unistd.h>
+
 #include "terminal/utils/colors/color.h"
-
-
 #include "terminal/terminal.h"
 
 int main() {
@@ -33,13 +32,9 @@ int main() {
         terminal.clear();
         terminal.print(checkbox);
     } while (terminal.detect_kb_input() != Keys::ENTER);
-
     */
 
-    TextColor("just testing", FG_BLACK, BG_BLACK, true);
-    std::cout << "fr" << std::endl;
-    std::cin.ignore();
-    return 0;
+
 
 
 }

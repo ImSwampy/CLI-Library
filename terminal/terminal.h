@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <thread>
-#include <windows.h>
 
 
-#include "systems.h"
+
+#include "systems/systems.h"
 #include "input/checkbox/checkbox.h"
 
 typedef enum {
