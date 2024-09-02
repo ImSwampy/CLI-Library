@@ -1,22 +1,13 @@
-    #include "choice.h"
+#include "choice.h"
 
 Choice::Choice() {
     name = "Name here";
-    description = "Description here";
     script = "echo \"script be scripting\"";
 }
+
 
 Choice::Choice(std::string _name) : name(_name) {
-    description = "Description here";
     script = "echo \"script be scripting\"";
-}
-
-Choice::Choice(std::string _name, std::string _description) : name(_name), description(_description) {
-    script = "echo \"script be scripting\"";
-}
-
-Choice::Choice(std::string _name, std::string _description, std::string _path_to_script) : name(_name), description(_description), script(_path_to_script) {
-
 }
 
 void Choice::execute() {
@@ -25,10 +16,6 @@ void Choice::execute() {
     } else {
         std::cerr << "Error: 'script' is not defined" << std::endl;
     }
-}
-
-std::string Choice::get_description() {
-    return description;
 }
 
 std::string Choice::get_name() {

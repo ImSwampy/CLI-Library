@@ -5,7 +5,7 @@
 #include "terminal/terminal.h"
 
 int main() {
-    /*
+
     Terminal terminal;
     Checkbox checkbox;
     Choice choice1;
@@ -32,7 +32,9 @@ int main() {
         terminal.clear();
         terminal.print(checkbox);
     } while (terminal.detect_kb_input() != Keys::ENTER);
-    */
+
+    checkbox.
+
 
 
 

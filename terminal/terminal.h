@@ -24,9 +24,9 @@ public:
     void println(std::string text);
     void clear();
     Keys detect_kb_input(bool _continue = true);
+    std::vector<Choice> get_choices(Checkbox &checkbox)
 private:
-    Checkbox *checkbox = nullptr;
-    unsigned cursor_pos[2] = {0, 0};
+
 };
 
 #endif //TERMINAL_H

@@ -63,4 +63,17 @@ std::string Checkbox::get_choice(int choice_index) {
     return choices[choice_index].get_name();
 }
 
+std::vector<Choice> Checkbox::get_selected() {
+    std::vector<Choice> total_selected;
+
+    for (auto &choice : choices) {
+        if (choice.is_selected()) {
+            total_selected.push_back(choice);
+        }
+    }
+
+    return total_selected;
+}
+
+
 

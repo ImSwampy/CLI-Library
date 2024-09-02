@@ -4,7 +4,12 @@
 
 #include <windows.h>
 
-inline Keys Terminal::detect_kb_input(bool) {
+void Terminal::clear() {
+    system("cls");
+}
+
+
+Keys Terminal::detect_kb_input(bool) {
     while (true) {
         if (GetConsoleWindow() == GetForegroundWindow()) {
             if (GetAsyncKeyState(VK_DOWN) < 0)

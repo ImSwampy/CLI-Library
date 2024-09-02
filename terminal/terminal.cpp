@@ -17,4 +17,3 @@ void Terminal::println(std::string text) {
     std::cout << text << std::endl;
 }
 
-

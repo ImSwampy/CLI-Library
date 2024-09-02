@@ -6,6 +6,7 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <algorithm>
+#include <vector>
 
 #include "../choice/choice.h"
 #include "../../terminal.h"
@@ -33,10 +34,13 @@ public:
 
     std::string get_choice(int choice_index);
 
+
+
 private:
     std::vector<Choice> choices;
     unsigned short hovered = 0;
     void display_checkbox();
+    std::vector<Choice> get_selected();
     friend class Terminal;
 };
 
