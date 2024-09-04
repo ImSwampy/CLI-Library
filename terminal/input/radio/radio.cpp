@@ -1,46 +1,50 @@
-#include "checkbox.h"
+#include "radio.h"
 
-Checkbox::Checkbox() = default;
+Radio::Radio() = default;
 
-Checkbox::~Checkbox() = default;
+Radio::~Radio() = default;
 
-void Checkbox::add_choice(Choice &choice) {
+void Radio::add_choice(Choice &choice) {
     choices.push_back(choice);
 }
 
-void Checkbox::select() {
+void Radio::select() {
     if (0 < hovered < choices.size()-1) {
+        if (got_selected != -1) choices[got_selected].select();
         choices[hovered].select();
+        got_selected = hovered;
     } else {
         std::cerr << "selection out of bounds." << std::endl;
     }
 }
 
-void Checkbox::select(int choice_index) {
-    if (0 < choice_index < choices.size()) {
+void Radio::select(int choice_index) {
+    if (0 < choice_index < choices.size()-1) {
+        if (got_selected != -1) choices[got_selected].select();
         choices[choice_index].select();
+        got_selected = hovered;
     } else {
         std::cerr << "selection out of bounds." << std::endl;
     }
 }
 
 
-void Checkbox::display_checkbox() {
+void Radio::display_radio() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            Win_TextColor(select_sign + " ", FG_ORANGE);
+            Win_TextColor(select_sign + " ", FG_RED);
         } else {
             std::cout << not_select_sign << " ";
         }
         if (i == hovered) {
-            std::cout << choices[i].get_name() << "\t<-" << std::endl;
+            Win_TextColor(choices[i].get_name(), FG_BLACK, BG_WHITE, true);
         } else {
             std::cout << choices[i].get_name() << std::endl;
         }
     }
 }
 
-void Checkbox::change_hover(hover_opt option) {
+void Radio::change_hover(hover_opt option) {
     switch (option) {
         case hover_opt::increase:
             if (hovered+1 < choices.size()) {
@@ -59,26 +63,23 @@ void Checkbox::change_hover(hover_opt option) {
     }
 }
 
-std::optional<Choice> Checkbox::get_choice(int choice_index) {
+std::optional<Choice> Radio::get_choice(int choice_index) {
     if (0 < choice_index < choices.size()) {
         return choices[choice_index];
     }
     return {};
 }
 
-std::vector<Choice> Checkbox::get_selected() {
-    std::vector<Choice> total_selected;
-
+std::optional<Choice> Radio::get_selected() {
     for (auto &choice : choices) {
         if (choice.is_selected()) {
-            total_selected.push_back(choice);
+            return choice;
         }
     }
-
-    return total_selected;
+    return {};
 }
 
-void Checkbox::set_selection(std::string selected, std::string not_selected) {
+void Radio::set_selection(std::string selected, std::string not_selected) {
     if (!selected.empty() && !not_selected.empty()) {
         select_sign = selected;
         not_select_sign = not_selected;
@@ -86,13 +87,10 @@ void Checkbox::set_selection(std::string selected, std::string not_selected) {
 
 }
 
-void Checkbox::set_selection(Box box, std::string sign) {
+void Radio::set_selection(Box box, std::string sign) {
     if (box == Box::selected && !sign.empty()) {
         select_sign = sign;
     } else if (box == Box::not_selected) {
         not_select_sign = sign;
     }
 }
-
-
-

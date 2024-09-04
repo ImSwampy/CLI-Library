@@ -1,38 +1,21 @@
 #include "choice.h"
 
+
+
 Choice::Choice() {
     name = "Name here";
-    script = "echo \"script be scripting\"";
+    selected = false;
 }
-
 
 Choice::Choice(std::string _name) : name(_name) {
-    script = "echo \"script be scripting\"";
+    selected = false;
 }
 
-void Choice::execute() {
-    if (!script.empty()) {
-        system(script.c_str());
-    } else {
-        std::cerr << "Error: 'script' is not defined" << std::endl;
-    }
+Choice::Choice(std::string _name, bool is_selected) : name(_name), selected(is_selected) {
 }
 
 std::string Choice::get_name() {
     return name;
-}
-
-void Choice::load_script(std::string path_to_file) {
-    // open script file
-    std::ifstream file;
-    file.open(script);
-    std::string script_buff;
-    // save it to script variable
-    while (file.is_open()) {
-        script.append(std::to_string(file.get()));
-        script.append("\n");
-    }
-    file.close();
 }
 
 void Choice::set_name(std::string _name) {

@@ -1,46 +1,45 @@
-#ifndef CHECKBOX_H
-#define CHECKBOX_H
+#ifndef UNTITLED5_RADIO_H
+#define UNTITLED5_RADIO_H
 
 #include <string>
-#include <iostream>
-#include <vector>
-#include <bits/stdc++.h>
-#include <algorithm>
 #include <vector>
 #include <optional>
 
 #include "../choice/choice.h"
-#include "../../terminal.h"
 #include "../../utils/common.h"
 #include "../../utils/colors/color.h"
 
-class Checkbox {
+class Radio {
 public:
     // constructor
-    Checkbox();
-    ~Checkbox();
+    Radio();
+    ~Radio();
 
     // setter
     void add_choice(Choice &choice);
-    void change_hover(hover_opt option);
     void select();
     void select(int choice_index);
+    void change_hover(hover_opt option);
+
+    std::optional<Choice> get_choice(int choice_index);
+
     void set_selection(std::string selected, std::string not_selected);
     void set_selection(Box box, std::string sign);
 
-    std::optional<Choice> get_choice(int choice_index);
+
 
 private:
     std::vector<Choice> choices;
     unsigned short hovered = 0;
-    std::string select_sign = "[*]";
-    std::string not_select_sign = "[ ]";
+    short got_selected = -1;
+
+    std::string select_sign = " >";
+    std::string not_select_sign = "  ";
 
     friend class Terminal;
-    void display_checkbox();
-    std::vector<Choice> get_selected();
+    void display_radio();
+    std::optional<Choice> get_selected();
 };
 
 
-
-#endif //CHECKBOX_H
+#endif //UNTITLED5_RADIO_H

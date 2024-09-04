@@ -4,17 +4,19 @@
 #include <iostream>
 #include <fstream>
 
+typedef enum {
+    increase,
+    decrease
+} hover_opt;
+
 class Choice {
 public:
     // Constructors
-    Choice();
-    Choice(std::string _name);
-
-    void load_script(std::string path_to_file);
-    void execute();
+    explicit Choice();
+    explicit Choice(std::string _name);
+    explicit Choice(std::string _name, bool is_selected);
 
     void set_name(std::string _name);
-    void set_script(std::string _name);
     void select();
     bool is_selected();
 
@@ -22,8 +24,6 @@ public:
     std::string get_name();
 private:
     std::string name;
-    std::string script;
-
     bool selected = false;
 };
 

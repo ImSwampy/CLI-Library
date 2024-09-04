@@ -37,6 +37,11 @@ Keys Terminal::detect_kb_input(bool) {
 #include <unistd.h>
 #include <termios.h>
 
+void Terminal::clear() {
+    std::cout << "\033c";
+}
+
+
 inline Keys Terminal::detect_kb_input(bool) {
     while (true) {
         char c;
@@ -50,7 +55,7 @@ inline Keys Terminal::detect_kb_input(bool) {
             case 27:
                 char arrow[2];
                 read(STDIN_FILENO, arrow, 2)
-                switch ()
+                if (arrow[])
         }
     }
 }
