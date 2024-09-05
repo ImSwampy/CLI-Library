@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unistd.h>
 
 #include "terminal/utils/colors/color.h"
 #include "terminal/terminal.h"
@@ -71,15 +70,15 @@ int main() {
         } else if (input == Keys::SPACE) {
             radio.select();
         }
-        Sleep(150);
         terminal.clear();
         terminal.print(radio);
-    } while (terminal.detect_kb_input() != Keys::ENTER);
+    } while (input != Keys::ENTER);
 
     terminal.clear();
-
+    /*
     auto res = terminal.get_choice(radio);
     std::cout << res->get_name() << std::endl;
     Sleep(5000);
     std::cin.ignore();
+    */
 }
