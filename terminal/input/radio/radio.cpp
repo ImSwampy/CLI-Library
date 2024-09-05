@@ -63,7 +63,7 @@ void Radio::change_hover(hover_opt option) {
     }
 }
 
-std::optional<Choice> Radio::get_choice(int choice_index) {
+std::optional<Choice> Radio::get_choice(unsigned short choice_index) {
     if (choice_index < choices.size()) {
         return choices[choice_index];
     }
