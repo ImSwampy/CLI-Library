@@ -18,10 +18,10 @@ public:
     // setter
     void add_choice(Choice &choice);
     void select();
-    void select(int choice_index);
+    void select(unsigned short choice_index);
     void change_hover(hover_opt option);
 
-    std::optional<Choice> get_choice(int choice_index);
+    std::optional<Choice> get_choice(unsigned short choice_index);
 
     void set_selection(std::string selected, std::string not_selected);
     void set_selection(Box box, std::string sign);

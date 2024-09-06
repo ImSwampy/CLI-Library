@@ -9,7 +9,7 @@ void Radio::add_choice(Choice &choice) {
 }
 
 void Radio::select() {
-    if (0 < hovered < choices.size()) {
+    if (hovered < choices.size()) {
         if (got_selected != -1) choices[got_selected].select();
         choices[hovered].select();
         got_selected = hovered;
@@ -18,8 +18,8 @@ void Radio::select() {
     }
 }
 
-void Radio::select(int choice_index) {
-    if (0 < choice_index < choices.size()) {
+void Radio::select(unsigned short choice_index) {
+    if (choice_index < choices.size()) {
         if (got_selected != -1) choices[got_selected].select();
         choices[choice_index].select();
         got_selected = hovered;
@@ -63,8 +63,8 @@ void Radio::change_hover(hover_opt option) {
     }
 }
 
-std::optional<Choice> Radio::get_choice(int choice_index) {
-    if (0 < choice_index < choices.size()) {
+std::optional<Choice> Radio::get_choice(unsigned short choice_index) {
+    if (choice_index < choices.size()) {
         return choices[choice_index];
     }
     return {};

@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
 #include <algorithm>
 #include <vector>
 #include <optional>
@@ -24,11 +23,11 @@ public:
     void add_choice(Choice &choice);
     void change_hover(hover_opt option);
     void select();
-    void select(int choice_index);
+    void select(unsigned short choice_index);
     void set_selection(std::string selected, std::string not_selected);
     void set_selection(Box box, std::string sign);
 
-    std::optional<Choice> get_choice(int choice_index);
+    std::optional<Choice> get_choice(unsigned short choice_index);
 
 private:
     std::vector<Choice> choices;

@@ -9,15 +9,15 @@ void Checkbox::add_choice(Choice &choice) {
 }
 
 void Checkbox::select() {
-    if (0 < hovered < choices.size()) {
+    if (hovered < choices.size()) {
         choices[hovered].select();
     } else {
         std::cerr << "selection out of bounds." << std::endl;
     }
 }
 
-void Checkbox::select(int choice_index) {
-    if (0 < choice_index < choices.size()) {
+void Checkbox::select(unsigned short choice_index) {
+    if (choice_index < choices.size()) {
         choices[choice_index].select();
     } else {
         std::cerr << "selection out of bounds." << std::endl;
@@ -59,8 +59,8 @@ void Checkbox::change_hover(hover_opt option) {
     }
 }
 
-std::optional<Choice> Checkbox::get_choice(int choice_index) {
-    if (0 < choice_index < choices.size()) {
+std::optional<Choice> Checkbox::get_choice(unsigned short choice_index) {
+    if (choice_index < choices.size()) {
         return choices[choice_index];
     }
     return {};

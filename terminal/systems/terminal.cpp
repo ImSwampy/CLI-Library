@@ -3,6 +3,9 @@
 #if defined(OS_WINDOWS)
 
 #include <windows.h>
+#include <conio.h>
+
+#define EXTENDED_KEY 224
 
 void Terminal::clear() {
     system("cls");
@@ -12,21 +15,21 @@ void Terminal::clear() {
 Keys Terminal::detect_kb_input(bool) {
 
     while (true) {
-        if (GetConsoleWindow() == GetForegroundWindow()) {
-            if (GetAsyncKeyState(VK_DOWN) < 0)
-            {
-                return Keys::DOWN;
-            }
-            if (GetAsyncKeyState(VK_UP) < 0)
-            {
+        int ch = _getch();
+        if (ch == EXTENDED_KEY) {
+            ch = _getch();
+            if (ch == 72) {
                 return Keys::UP;
             }
-            if (GetAsyncKeyState(VK_SPACE) < 0)
-            {
+            if (ch == 80) {
+                return Keys::DOWN;
+            }
+        }
+        else {
+            if (ch == 32) {
                 return Keys::SPACE;
             }
-            if (GetAsyncKeyState(VK_RETURN) < 0)
-            {
+            if (ch == 13) {
                 return Keys::ENTER;
             }
         }
