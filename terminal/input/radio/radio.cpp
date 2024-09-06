@@ -9,7 +9,7 @@ void Radio::add_choice(Choice &choice) {
 }
 
 void Radio::select() {
-    if (0 < hovered < choices.size()-1) {
+    if (0 < hovered < choices.size()) {
         if (got_selected != -1) choices[got_selected].select();
         choices[hovered].select();
         got_selected = hovered;
@@ -19,7 +19,7 @@ void Radio::select() {
 }
 
 void Radio::select(int choice_index) {
-    if (0 < choice_index < choices.size()-1) {
+    if (0 < choice_index < choices.size()) {
         if (got_selected != -1) choices[got_selected].select();
         choices[choice_index].select();
         got_selected = hovered;

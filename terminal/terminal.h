@@ -7,13 +7,7 @@
 #include "systems/systems.h"
 #include "input/checkbox/checkbox.h"
 #include "input/radio/radio.h"
-
-typedef enum {
-    DOWN,
-    UP,
-    SPACE,
-    ENTER,
-} Keys;
+#include "utils/common.h"
 
 class Terminal {
 public:

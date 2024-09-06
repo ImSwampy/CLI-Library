@@ -47,7 +47,7 @@ int main() {
     */
 
 
-
+    /*
     Terminal terminal;
     Radio radio;
     Choice choice1;
@@ -82,4 +82,10 @@ int main() {
     std::cout << res->get_name() << std::endl;
     Sleep(5000);
     std::cin.ignore();
+    */
+    while (1) {
+        std::cout << GetConsoleWindow() << std::endl;
+        std::cout << GetForegroundWindow() << std::endl;
+        Sleep(100);
+    }
 }

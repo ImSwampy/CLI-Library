@@ -10,6 +10,7 @@ void Terminal::clear() {
 
 
 Keys Terminal::detect_kb_input(bool) {
+
     while (true) {
         if (GetConsoleWindow() == GetForegroundWindow()) {
             if (GetAsyncKeyState(VK_DOWN) < 0)

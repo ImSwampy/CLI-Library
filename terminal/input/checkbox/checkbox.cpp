@@ -9,7 +9,7 @@ void Checkbox::add_choice(Choice &choice) {
 }
 
 void Checkbox::select() {
-    if (0 < hovered < choices.size()-1) {
+    if (0 < hovered < choices.size()) {
         choices[hovered].select();
     } else {
         std::cerr << "selection out of bounds." << std::endl;

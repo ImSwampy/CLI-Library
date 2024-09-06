@@ -8,7 +8,7 @@
 #if defined(OS_WINDOWS)
 
 #include <windows.h>
-const typedef enum {
+typedef enum {
     FG_BLACK = 0x0,
     FG_RED = FOREGROUND_RED,
     FG_GREEN = FOREGROUND_GREEN,
@@ -19,7 +19,7 @@ const typedef enum {
     FG_ORANGE = FOREGROUND_RED | FOREGROUND_GREEN,
 } Win_Foreground;
 
-const typedef enum {
+typedef enum {
     BG_BLACK = 0x00,
     BG_RED = BACKGROUND_RED,
     BG_GREEN = BACKGROUND_GREEN,
@@ -32,7 +32,8 @@ const typedef enum {
 
 inline void Win_TextColor(std::string text, Win_Foreground color, Win_Background background = BG_BLACK, bool newline = false) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, color);
+    auto new_color = (color & 0xFF) | (background & 0xFF);
+    SetConsoleTextAttribute(hConsole, new_color);
     std::cout << text;
     if (newline) std::cout << std::endl;
     SetConsoleTextAttribute(hConsole, 0x7 | 0x00);
