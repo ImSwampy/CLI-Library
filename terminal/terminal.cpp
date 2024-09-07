@@ -1,6 +1,30 @@
 #include "terminal.h"
 
+#if defined(OS_WINDOWS)
+
 Terminal::Terminal() = default;
+Terminal::~Terminal() = default;
+
+#elif defined(OS_LINUX)
+#include <stdio.h>
+#include <unistd.h>
+#include <termios.h>
+
+Terminal::Terminal() {
+    struct termios new_termios;
+    tcgetattr(STDIN_FILENO, &new_termios);
+    new_termios.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &new_termios);
+}
+
+Terminal::~Terminal() {
+    struct termios new_termios;
+    tcgetattr(STDIN_FILENO, &new_termios);
+    new_termios.c_lflag &= (ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &new_termios);
+}
+
+#endif
 
 // print
 void Terminal::print(std::string text) {

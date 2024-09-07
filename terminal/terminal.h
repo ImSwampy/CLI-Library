@@ -18,6 +18,7 @@ typedef enum {
 class Terminal {
 public:
     Terminal();
+    ~Terminal();
     void print(std::string text);
     void print(class Checkbox &checkbox);
     void print(class Radio &radio);
