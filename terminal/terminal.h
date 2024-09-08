@@ -9,6 +9,10 @@
 #include "input/radio/radio.h"
 #include "utils/common.h"
 
+#if defined(OS_WINDOWS)
+#include <windows.h>
+#endif
+
 class Terminal {
 public:
     Terminal();
@@ -16,8 +20,9 @@ public:
     void print(class Checkbox &checkbox);
     void print(class Radio &radio);
     void println(std::string text);
+    std::string input(std::string default_value);
     void clear();
-    Keys detect_kb_input(bool _continue = true);
+    Keys detect_kb_input();
     std::vector<Choice> get_choices(Checkbox &checkbox);
     std::optional<Choice> get_choice(Radio &radio);
 private:

@@ -1,26 +1,26 @@
 #include "terminal.h"
 
-Terminal::Terminal() = default;
+Terminal::Terminal() {
+#if defined(OS_WINDOWS)
+    HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE), hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD dwMode;
+    GetConsoleMode(hOutput, &dwMode);
+    dwMode |= ENABLE_PROCESSED_OUTPUT | ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    if (!SetConsoleMode(hOutput, dwMode)) {
+        std::cerr << "SetConsoleMode failed." << std::endl << "No color enabled." << std::endl;
+    }
+#endif
+};
 
-// print
-void Terminal::print(std::string text) {
-    std::cout << text;
-}
+void Terminal::print(std::string text) { std::cout << text; }
+
+void Terminal::print(Checkbox &checkbox) { checkbox.display_checkbox(); }
 
 
-void Terminal::print(Checkbox &checkbox) {
-    checkbox.display_checkbox();
-}
-
-
-void Terminal::print(Radio &radio) {
-    radio.display_radio();
-}
+void Terminal::print(Radio &radio) { radio.display_radio(); }
 
 // print line
-void Terminal::println(std::string text) {
-    std::cout << text << std::endl;
-}
+void Terminal::println(std::string text) { std::cout << text << std::endl; }
 
 std::vector<Choice> Terminal::get_choices(Checkbox &checkbox) {
     return checkbox.get_selected();
@@ -28,5 +28,15 @@ std::vector<Choice> Terminal::get_choices(Checkbox &checkbox) {
 
 std::optional<Choice> Terminal::get_choice(Radio &radio) {
     return radio.get_selected();
+}
+
+std::string Terminal::input(const std::string default_value) {
+    std::cout << default_value;
+    std::string input;
+    std::cin >> input;
+    if (input.empty()) {
+        input = default_value;
+    }
+    return input;
 }
 
