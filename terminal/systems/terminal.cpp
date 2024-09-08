@@ -12,7 +12,7 @@ void Terminal::clear() {
 }
 
 
-Keys Terminal::detect_kb_input(bool) {
+Keys Terminal::detect_kb_input() {
 
     while (true) {
         int ch = _getch();

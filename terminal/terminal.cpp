@@ -53,4 +53,3 @@ std::string Terminal::input(const std::string default_value) {
     }
     return input;
 }
-
