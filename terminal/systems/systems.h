@@ -6,10 +6,6 @@
 
 #elif defined(__linux__)
 #define OS_LINUX
-
-#else
-exit("OS not supported.");
-
 #endif
 
 #endif // SYSTEMS_H

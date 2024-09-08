@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.28)
 project(untitled5)
 
+if(NOT (${CMAKE_SYSTEM_NAME} STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Windows"))
+    message(FATAL_ERROR "Operating system is unsupported.")
+endif()
+
 set(CMAKE_CXX_STANDARD 23)
 
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll")
