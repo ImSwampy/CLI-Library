@@ -32,12 +32,14 @@ void Radio::select(unsigned short choice_index) {
 void Radio::display_radio() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            Win_TextColor(select_sign + " ", FG_RED);
+            // Doesn't compile on linux. Should fix.
+            //Win_TextColor(select_sign + " ", FG_RED);
         } else {
             std::cout << not_select_sign << " ";
         }
         if (i == hovered) {
-            Win_TextColor(choices[i].get_name(), FG_BLACK, BG_WHITE, true);
+            // Doesn't compile on linux. Should fix.
+            //Win_TextColor(choices[i].get_name(), FG_BLACK, BG_WHITE, true);
         } else {
             std::cout << choices[i].get_name() << std::endl;
         }

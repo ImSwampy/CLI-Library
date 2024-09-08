@@ -9,8 +9,22 @@ Terminal::Terminal() {
     if (!SetConsoleMode(hOutput, dwMode)) {
         std::cerr << "SetConsoleMode failed." << std::endl << "No color enabled." << std::endl;
     }
+#elif defined(OS_LINUX)
+    struct termios new_termios;
+    tcgetattr(STDIN_FILENO, &new_termios);
+    new_termios.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &new_termios);
 #endif
 };
+
+Terminal::~Terminal() {
+#if defined(OS_LINUX)
+    struct termios new_termios;
+    tcgetattr(STDIN_FILENO, &new_termios);
+    new_termios.c_lflag &= (ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &new_termios);
+#endif
+}
 
 void Terminal::print(std::string text) { std::cout << text; }
 

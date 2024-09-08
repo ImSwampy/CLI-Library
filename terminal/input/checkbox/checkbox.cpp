@@ -28,7 +28,8 @@ void Checkbox::select(unsigned short choice_index) {
 void Checkbox::display_checkbox() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            Win_TextColor(select_sign + " ", FG_ORANGE);
+            // Doesn't compile on linux. Should fix.
+            //Win_TextColor(select_sign + " ", FG_ORANGE);
         } else {
             std::cout << not_select_sign << " ";
         }

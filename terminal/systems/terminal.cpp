@@ -38,6 +38,8 @@ Keys Terminal::detect_kb_input(bool) {
 
 #elif defined(OS_LINUX)
 
+#define KEY_ESC 27
+
 #include <unistd.h>
 #include <termios.h>
 
@@ -46,22 +48,30 @@ void Terminal::clear() {
 }
 
 
-inline Keys Terminal::detect_kb_input(bool) {
+Keys Terminal::detect_kb_input(bool) {
     while (true) {
-        char c;
-        read(STDIN_FILENO, &c, 1);
+        int ch = getchar();
+        if (ch == KEY_ESC) {
+            getchar();
+            ch = getchar();
 
-        switch (c) {
-            case ' ':
+            if (ch == 65) {
+                return Keys::UP;
+            }
+            if (ch == 66) {
+                return Keys::DOWN;
+            }
+        }
+        else {
+            if (ch == 32) {
                 return Keys::SPACE;
-            case '\n':
+            }
+            if (ch == 10) {
                 return Keys::ENTER;
-            case 27:
-                char arrow[2];
-                read(STDIN_FILENO, arrow, 2)
-                if (arrow[])
+            }
         }
     }
+    return Keys::UP;
 }
 
 #endif
