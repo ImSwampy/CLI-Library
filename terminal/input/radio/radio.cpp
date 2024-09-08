@@ -32,17 +32,20 @@ void Radio::select(unsigned short choice_index) {
 void Radio::display_radio() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            // Doesn't compile on linux. Should fix.
-            //Win_TextColor(select_sign + " ", FG_RED);
+            std::cout << TextColor(select_sign, BRIGHT_RED) << " ";
         } else {
             std::cout << not_select_sign << " ";
         }
         if (i == hovered) {
-            // Doesn't compile on linux. Should fix.
-            //Win_TextColor(choices[i].get_name(), FG_BLACK, BG_WHITE, true);
+            std::cout << TextColor(choices[i].get_name(), REVERSE) << std::endl;
         } else {
             std::cout << choices[i].get_name() << std::endl;
         }
+    }
+
+    if (_display_description) {
+        std::cout << std::endl;
+        std::cout << "   " << TextColor(get_description(), BRIGHT_BLACK, REVERSE) << std::endl;
     }
 }
 
@@ -95,4 +98,12 @@ void Radio::set_selection(Box box, std::string sign) {
     } else if (box == Box::not_selected) {
         not_select_sign = sign;
     }
+}
+
+void Radio::display_description(bool should_display) {
+    _display_description = should_display;
+}
+
+std::string Radio::get_description() {
+    return choices[hovered].get_description();
 }

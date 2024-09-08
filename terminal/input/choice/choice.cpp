@@ -1,18 +1,34 @@
 #include "choice.h"
 
-
+// CONSTRUCTORS //
 
 Choice::Choice() {
-    name = "Name here";
+    name = "Choice name";
+    description = "Choice description";
     selected = false;
 }
 
-Choice::Choice(std::string _name) : name(_name) {
+Choice::Choice(std::string _name) {
+    _name.empty() ? name = "Choice name" : _name;
+    description = "Choice description";
     selected = false;
 }
 
-Choice::Choice(std::string _name, bool is_selected) : name(_name), selected(is_selected) {
+Choice::Choice(std::string _name, std::string _description) {
+    _name.empty() ? name = "Choice name" : _name;
+    _description.empty() ? description = "Choice description" : _description;
+    selected = false;
 }
+
+Choice::Choice(std::string _name, std::string _description, bool is_selected) {
+    _name.empty() ? name = "Choice name" : _name;
+    _description.empty() ? description = "Choice description" : _description;
+    selected = is_selected;
+}
+
+// END CONSTRUCTORS //
+
+
 
 std::string Choice::get_name() {
     return name;
@@ -30,6 +46,16 @@ void Choice::select() {
 
 bool Choice::is_selected() {
     return selected;
+}
+
+void Choice::set_description(std::string _description) {
+    if (!_description.empty()) {
+        description = _description;
+    }
+}
+
+std::string Choice::get_description() {
+    return description;
 }
 
 

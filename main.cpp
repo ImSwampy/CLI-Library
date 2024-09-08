@@ -49,12 +49,16 @@ int main() {
 
     Terminal terminal;
     Radio radio;
+    radio.display_description(true);
     Choice choice1;
     choice1.set_name("choice1");
+    choice1.set_description("description1");
     Choice choice2;
     choice2.set_name("choice2");
+    choice2.set_description("description2");
     Choice choice3;
     choice3.set_name("choice3");
+    choice3.set_description("description3");
     radio.add_choice(choice1);
     radio.add_choice(choice2);
     radio.add_choice(choice3);

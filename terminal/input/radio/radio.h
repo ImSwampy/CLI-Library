@@ -22,9 +22,12 @@ public:
     void change_hover(hover_opt option);
 
     std::optional<Choice> get_choice(unsigned short choice_index);
+    std::string get_description();
 
     void set_selection(std::string selected, std::string not_selected);
     void set_selection(Box box, std::string sign);
+
+    void display_description(bool should_display);
 
 
 
@@ -32,6 +35,8 @@ private:
     std::vector<Choice> choices;
     unsigned short hovered = 0;
     short got_selected = -1;
+
+    bool _display_description = false;
 
     std::string select_sign = " >";
     std::string not_select_sign = "  ";

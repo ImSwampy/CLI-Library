@@ -21,5 +21,6 @@ add_executable(untitled5 main.cpp
         terminal/systems/terminal.cpp
         terminal/input/radio/radio.cpp
         terminal/input/radio/radio.h
-        terminal/utils/common.h)
+        terminal/utils/common.h
+        terminal/input/globals.h)
 
