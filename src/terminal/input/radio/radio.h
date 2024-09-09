@@ -29,8 +29,6 @@ public:
     void set_selection(Box box, std::string sign);
 
     void display_description(bool should_display);
-    void set_parent(class Terminal &_terminal);
-
     void handle_keys();
 
 private:
@@ -41,7 +39,8 @@ private:
 
     bool _display_description = false;
 
-    Terminal *terminal = nullptr;
+    class Terminal *terminal = nullptr;
+    void set_parent(class Terminal &_terminal);
 
     std::string select_sign = " >";
     std::string not_select_sign = "  ";

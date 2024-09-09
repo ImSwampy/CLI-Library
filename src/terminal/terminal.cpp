@@ -58,12 +58,11 @@ std::string Terminal::input(const std::string default_value) {
     return input;
 }
 
-/*
+
 void Terminal::add(class Checkbox &checkbox) {
-    checkbox.set_parent()
+    checkbox.set_parent(*this);
 }
 
 void Terminal::add(class Radio &radio) {
-    children = &radio;
+    radio.set_parent(*this);
 }
-*/

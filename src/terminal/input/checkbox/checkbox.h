@@ -25,7 +25,7 @@ public:
     void select(unsigned short choice_index);
     void set_selection(std::string selected, std::string not_selected);
     void set_selection(Box box, std::string sign);
-    void set_parent(class Terminal &_terminal);
+
 
     std::optional<Choice> get_choice(unsigned short choice_index);
 
@@ -35,10 +35,12 @@ private:
     std::string select_sign = "[*]";
     std::string not_select_sign = "[ ]";
 
+    void set_parent(class Terminal &_terminal);
+
     friend class Terminal;
     void display_checkbox();
     std::vector<Choice> get_selected();
-    Terminal *terminal = nullptr;
+    class Terminal *terminal = nullptr;
 };
 
 
