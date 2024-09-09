@@ -14,4 +14,5 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 file (GLOB_RECURSE SOURCES "src/*.cpp")
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES}
+        src/terminal/input/globals.h)

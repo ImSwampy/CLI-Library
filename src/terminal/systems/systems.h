@@ -6,6 +6,9 @@
 
 #elif defined(__linux__)
 #define OS_LINUX
+
+#else
+exit(69);
 #endif
 
 #endif // SYSTEMS_H

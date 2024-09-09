@@ -2,6 +2,7 @@
 
 Terminal::Terminal() {
 #if defined(OS_WINDOWS)
+
     HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE), hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD dwMode;
     GetConsoleMode(hOutput, &dwMode);
@@ -28,12 +29,15 @@ Terminal::~Terminal() {
 
 void Terminal::print(std::string text) { std::cout << text; }
 
-void Terminal::print(Checkbox &checkbox) { checkbox.display_checkbox(); }
+void Terminal::print(Checkbox &checkbox) {
+    checkbox.display_checkbox();
+}
 
 
-void Terminal::print(Radio &radio) { radio.display_radio(); }
+void Terminal::print(Radio &radio) {
+    radio.display_radio();
+}
 
-// print line
 void Terminal::println(std::string text) { std::cout << text << std::endl; }
 
 std::vector<Choice> Terminal::get_choices(Checkbox &checkbox) {
@@ -53,3 +57,13 @@ std::string Terminal::input(const std::string default_value) {
     }
     return input;
 }
+
+/*
+void Terminal::add(class Checkbox &checkbox) {
+    checkbox.set_parent()
+}
+
+void Terminal::add(class Radio &radio) {
+    children = &radio;
+}
+*/

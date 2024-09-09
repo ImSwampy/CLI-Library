@@ -62,6 +62,7 @@ int main() {
     radio.add_choice(choice1);
     radio.add_choice(choice2);
     radio.add_choice(choice3);
+    radio.set_parent(terminal);
 
     Keys input;
     terminal.print(radio);

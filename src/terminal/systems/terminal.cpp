@@ -11,7 +11,6 @@ void Terminal::clear() {
     system("cls");
 }
 
-
 Keys Terminal::detect_kb_input() {
 
     while (true) {

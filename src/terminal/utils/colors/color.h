@@ -26,6 +26,7 @@ typedef enum {
     WHITE = 97,
     REVERSE = 7,
     DEFAULT = 0,
+    BOLD = 1,
 } Color;
 
 

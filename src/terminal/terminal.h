@@ -2,7 +2,7 @@
 #define TERMINAL_H
 
 #include <iostream>
-#include <thread>
+#include <variant>
 
 #include "systems/systems.h"
 #include "input/checkbox/checkbox.h"
@@ -23,11 +23,12 @@ public:
     void println(std::string text);
     std::string input(std::string default_value);
     void clear();
-    Keys detect_kb_input();
-    std::vector<Choice> get_choices(Checkbox &checkbox);
-    std::optional<Choice> get_choice(Radio &radio);
-private:
+    static Keys detect_kb_input();
+    std::vector<Choice> get_choices(class Checkbox &checkbox);
+    std::optional<Choice> get_choice(class Radio &radio);
 
+    void add(class Checkbox &checkbox);
+    void add(class Radio &radio);
 };
 
 #endif //TERMINAL_H

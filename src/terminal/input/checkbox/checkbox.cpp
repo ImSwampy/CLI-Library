@@ -2,7 +2,9 @@
 
 Checkbox::Checkbox() = default;
 
-Checkbox::~Checkbox() = default;
+Checkbox::~Checkbox() {
+    delete terminal;
+};
 
 void Checkbox::add_choice(Choice &choice) {
     choices.push_back(choice);
@@ -28,15 +30,14 @@ void Checkbox::select(unsigned short choice_index) {
 void Checkbox::display_checkbox() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            // Doesn't compile on linux. Should fix.
-            //Win_TextColor(select_sign + " ", FG_ORANGE);
+            terminal->print(TextColor(select_sign + " ", BOLD));
         } else {
-            std::cout << not_select_sign << " ";
+            terminal->print(not_select_sign + " ");
         }
         if (i == hovered) {
-            std::cout << choices[i].get_name() << "\t<-" << std::endl;
+            terminal->println(TextColor(choices[i].get_name(), DARK_YELLOW,REVERSE));
         } else {
-            std::cout << choices[i].get_name() << std::endl;
+            terminal->println(choices[i].get_name());
         }
     }
 }
@@ -93,6 +94,10 @@ void Checkbox::set_selection(Box box, std::string sign) {
     } else if (box == Box::not_selected) {
         not_select_sign = sign;
     }
+}
+
+void Checkbox::set_parent(class Terminal &_terminal) {
+    terminal = &_terminal;
 }
 
 

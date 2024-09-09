@@ -32,20 +32,20 @@ void Radio::select(unsigned short choice_index) {
 void Radio::display_radio() {
     for (int i = 0; i < choices.size(); i++) {
         if (choices[i].is_selected()) {
-            std::cout << TextColor(select_sign, BRIGHT_RED) << " ";
+            terminal->print(TextColor(select_sign + " ", BRIGHT_RED));
         } else {
-            std::cout << not_select_sign << " ";
+            terminal->print(not_select_sign + " ");
         }
         if (i == hovered) {
-            std::cout << TextColor(choices[i].get_name(), REVERSE) << std::endl;
+            terminal->println(TextColor(choices[i].get_name(),DARK_YELLOW, REVERSE));
         } else {
-            std::cout << choices[i].get_name() << std::endl;
+            terminal->println(choices[i].get_name());
         }
     }
 
     if (_display_description) {
-        std::cout << std::endl;
-        std::cout << "   " << TextColor(get_description(), BRIGHT_BLACK, REVERSE) << std::endl;
+        terminal->println("");
+        terminal->println(TextColor("   " + get_description(), BRIGHT_BLACK, REVERSE));
     }
 }
 
@@ -107,3 +107,8 @@ void Radio::display_description(bool should_display) {
 std::string Radio::get_description() {
     return choices[hovered].get_description();
 }
+
+void Radio::set_parent(class Terminal &_terminal) {
+    terminal = &_terminal;
+}
+
