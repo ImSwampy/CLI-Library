@@ -45,7 +45,7 @@ private:
     friend class Terminal;
     void set_parent(class Terminal &_terminal);
     void display_checkbox();
-    std::optional<Choice> get_selected();
+    Choice get_selected();
     class Terminal *terminal = nullptr;
 };
 
