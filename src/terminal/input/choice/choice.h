@@ -12,7 +12,7 @@ typedef enum {
 class Choice {
 public:
     // Constructors
-    explicit Choice();
+    Choice();
     explicit Choice(std::string _name);
     explicit Choice(std::string _name, std::string _description);
     explicit Choice(std::string _name, std::string _description, bool is_selected);
