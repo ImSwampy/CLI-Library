@@ -49,11 +49,15 @@ int main() {
 
     Terminal terminal;
     Radio radio;
+    Input input("Choice 1");
 
     Choice choice1;
     Choice choice2;
     Choice choice3;
 
+    terminal.add(input);
+    input.display();
+    terminal.println(input.get_input());
     choice1.set_name("choice 1");
     choice1.set_description("description 1");
     choice2.set_name("choice 2");
@@ -68,20 +72,20 @@ int main() {
 
     terminal.add(radio);
 
-    Keys input;
+    Keys kb_input;
     terminal.print(radio);
     do {
-        input = terminal.detect_kb_input();
-        if (input == Keys::DOWN) {
+        kb_input = terminal.detect_kb_input();
+        if (kb_input == Keys::DOWN) {
             radio.change_hover(hover_opt::increase);
-        } else if (input == Keys::UP) {
+        } else if (kb_input == Keys::UP) {
             radio.change_hover(hover_opt::decrease);
-        } else if (input == Keys::SPACE) {
+        } else if (kb_input == Keys::SPACE) {
             radio.select();
         }
         terminal.clear();
         terminal.print(radio);
-    } while (input != Keys::ENTER);
+    } while (kb_input != Keys::ENTER);
 
     terminal.clear();
 

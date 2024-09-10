@@ -55,3 +55,8 @@ void Terminal::add(class Checkbox &checkbox) {
 void Terminal::add(class Radio &radio) {
     radio.set_parent(*this);
 }
+
+void Terminal::add(Input &input) {
+    input.set_parent(*this);
+}
+

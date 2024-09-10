@@ -7,6 +7,7 @@
 #include "systems/systems.h"
 #include "input/checkbox/checkbox.h"
 #include "input/radio/radio.h"
+#include "input/text_input/input.h"
 #include "utils/common.h"
 
 #if defined(OS_WINDOWS)
@@ -28,6 +29,7 @@ public:
 
     void add(class Checkbox &checkbox);
     void add(class Radio &radio);
+    void add(class Input &input);
 };
 
 #endif //TERMINAL_H
