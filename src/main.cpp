@@ -49,19 +49,23 @@ int main() {
 
     Terminal terminal;
     Radio radio;
-    radio.display_description(true);
+
     Choice choice1;
+    Choice choice2;
+    Choice choice3;
+
     choice1.set_name("choice 1");
     choice1.set_description("description 1");
-    Choice choice2;
     choice2.set_name("choice 2");
     choice2.set_description("description 2");
-    Choice choice3;
     choice3.set_name("choice 3");
     choice3.set_description("description 3");
+
     radio.add_choice(choice1);
     radio.add_choice(choice2);
     radio.add_choice(choice3);
+    radio.display_description(true);
+
     terminal.add(radio);
 
     Keys input;
@@ -81,12 +85,6 @@ int main() {
 
     terminal.clear();
 
-    terminal.print(terminal.get_choice(radio)->get_name());
+    terminal.println(terminal.get_choice(radio)->get_name());
     std::cin.get();
-    /*
-    auto res = terminal.get_choice(radio);
-    std::cout << res->get_name() << std::endl;
-    Sleep(5000);
-    std::cin.ignore();
-    */
 }

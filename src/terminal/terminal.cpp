@@ -48,17 +48,6 @@ std::optional<Choice> Terminal::get_choice(Radio &radio) {
     return radio.get_selected();
 }
 
-std::string Terminal::input(const std::string default_value) {
-    std::cout << default_value;
-    std::string input;
-    std::cin >> input;
-    if (input.empty()) {
-        input = default_value;
-    }
-    return input;
-}
-
-
 void Terminal::add(class Checkbox &checkbox) {
     checkbox.set_parent(*this);
 }
