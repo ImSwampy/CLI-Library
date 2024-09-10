@@ -2,7 +2,9 @@
 
 Radio::Radio() = default;
 
-Radio::~Radio() = default;
+Radio::~Radio() {
+    delete terminal;
+};
 
 void Radio::add_choice(Choice &choice) {
     choices.push_back(choice);
