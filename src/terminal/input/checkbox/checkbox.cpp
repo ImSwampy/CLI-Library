@@ -61,7 +61,7 @@ void Checkbox::change_hover(hover_opt option) {
     }
 }
 
-std::optional<Choice> Checkbox::get_choice(unsigned short choice_index) {
+Choice Checkbox::get_choice(unsigned short choice_index) {
     if (choice_index < choices.size()) {
         return choices[choice_index];
     }
