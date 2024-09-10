@@ -80,6 +80,8 @@ int main() {
     } while (input != Keys::ENTER);
 
     terminal.clear();
+
+    terminal.print(radio.get_choice().get_name())
     /*
     auto res = terminal.get_choice(radio);
     std::cout << res->get_name() << std::endl;
