@@ -32,21 +32,22 @@ public:
     void handle_keys();
 
 private:
+    // Storage
     std::vector<Choice> choices;
 
+    // Selection
     unsigned short hovered = 0;
     short got_selected = -1;
 
+    // Interface stuff
     bool _display_description = false;
-
-    class Terminal *terminal = nullptr;
-    void set_parent(class Terminal &_terminal);
-
     std::string select_sign = " >";
     std::string not_select_sign = "  ";
 
+    // Terminal implementation
     friend class Terminal;
-
+    class Terminal *terminal = nullptr;
+    void set_parent(class Terminal &_terminal);
     void display_radio();
     std::optional<Choice> get_selected();
 };
