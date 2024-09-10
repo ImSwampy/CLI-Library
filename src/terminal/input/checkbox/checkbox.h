@@ -27,7 +27,7 @@ public:
     void set_selection(Box box, std::string sign);
 
 
-    std::optional<Choice> get_choice(unsigned short choice_index);
+    Choice get_choice(unsigned short choice_index);
 
 private:
     // Storage
