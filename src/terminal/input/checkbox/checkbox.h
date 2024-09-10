@@ -30,14 +30,20 @@ public:
     std::optional<Choice> get_choice(unsigned short choice_index);
 
 private:
+    // Storage
     std::vector<Choice> choices;
+
+    // Selection
     unsigned short hovered = 0;
+
+    // Interface
     std::string select_sign = "[*]";
     std::string not_select_sign = "[ ]";
 
-    void set_parent(class Terminal &_terminal);
+    
 
     friend class Terminal;
+    void set_parent(class Terminal &_terminal);
     void display_checkbox();
     std::vector<Choice> get_selected();
     class Terminal *terminal = nullptr;
