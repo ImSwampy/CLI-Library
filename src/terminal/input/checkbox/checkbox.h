@@ -40,12 +40,12 @@ private:
     std::string select_sign = "[*]";
     std::string not_select_sign = "[ ]";
 
-    
 
+    // Terminal implementation
     friend class Terminal;
     void set_parent(class Terminal &_terminal);
     void display_checkbox();
-    std::vector<Choice> get_selected();
+    std::optional<Choice> get_selected();
     class Terminal *terminal = nullptr;
 };
 
