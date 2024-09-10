@@ -81,7 +81,8 @@ int main() {
 
     terminal.clear();
 
-    terminal.print(radio.get_selected().get_name())
+    terminal.print(radio.get_selected()->get_name());
+    std::cin.get();
     /*
     auto res = terminal.get_choice(radio);
     std::cout << res->get_name() << std::endl;
