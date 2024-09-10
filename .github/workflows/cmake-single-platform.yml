@@ -1,3 +1,4 @@
+
 name: CMake on a single platform
 
 on:
@@ -11,7 +12,8 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    #runs-on: [ubuntu-latest, windows-latest]
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v4
