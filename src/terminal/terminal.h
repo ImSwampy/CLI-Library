@@ -21,7 +21,6 @@ public:
     void print(class Checkbox &checkbox);
     void print(class Radio &radio);
     void println(std::string text);
-    std::string input(std::string default_value);
     void clear();
     static Keys detect_kb_input();
     std::vector<Choice> get_choices(class Checkbox &checkbox);
