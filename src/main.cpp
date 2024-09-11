@@ -5,7 +5,7 @@
 #include "terminal/input/radio/radio.h"
 
 void script() {
-    std::cout << "nigger" << std::endl;
+    std::cout << "kk" << std::endl;
 }
 
 int main() {

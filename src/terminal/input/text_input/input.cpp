@@ -7,7 +7,7 @@ Input::Input(std::string _default_value) : default_value(_default_value) {}
 
 // DESTRUCTOR //
 Input::~Input() {
-    delete terminal;
+    terminal = nullptr;
 }
 // END DESTRUCTOR //
 

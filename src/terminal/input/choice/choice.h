@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-
-typedef void function();
+#include <functional>
 
 typedef enum {
     increase,
@@ -30,11 +29,11 @@ public:
     std::string get_description();
 
     void execute_script();
-    void set_script(function *function);
+    void set_script(std::function<void()> function);
 private:
     std::string name;
     std::string description;
-    function *script = nullptr;
+    std::function<void()> script;
     bool selected = false;
 };
 

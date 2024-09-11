@@ -3,7 +3,7 @@
 Checkbox::Checkbox() = default;
 
 Checkbox::~Checkbox() {
-    delete terminal;
+    terminal = nullptr;
 };
 
 void Checkbox::add_choice(Choice &choice) {

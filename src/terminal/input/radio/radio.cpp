@@ -3,7 +3,7 @@
 Radio::Radio() = default;
 
 Radio::~Radio() {
-    delete terminal;
+    terminal = nullptr;
 };
 
 void Radio::add_choice(Choice &choice) {
