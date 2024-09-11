@@ -58,6 +58,16 @@ std::string Choice::get_description() {
     return description;
 }
 
+void Choice::set_script(function *function) {
+    script = function;
+}
+
+void Choice::execute_script() {
+    script();
+}
+
+
+
 
 
 

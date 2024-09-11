@@ -4,6 +4,10 @@
 #include "terminal/terminal.h"
 #include "terminal/input/radio/radio.h"
 
+void script() {
+    std::cout << "nigger" << std::endl;
+}
+
 int main() {
     /*
     Terminal terminal;
@@ -60,6 +64,7 @@ int main() {
     terminal.println(input.get_input());
     choice1.set_name("choice 1");
     choice1.set_description("description 1");
+    choice1.set_script(script);
     choice2.set_name("choice 2");
     choice2.set_description("description 2");
     choice3.set_name("choice 3");
@@ -89,6 +94,7 @@ int main() {
 
     terminal.clear();
 
-    terminal.println(terminal.get_choice(radio)->get_name());
+    terminal.get_choice(radio)->execute_script();
+
     std::cin.get();
 }

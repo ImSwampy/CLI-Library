@@ -28,6 +28,7 @@ Terminal::~Terminal() {
 }
 
 void Terminal::print(std::string text) { std::cout << text; }
+void Terminal::print(char character) { std::cout << character; }
 
 void Terminal::print(Checkbox &checkbox) {
     checkbox.display_checkbox();

@@ -19,6 +19,7 @@ public:
     Terminal();
     ~Terminal();
     void print(std::string text);
+    void print(char character);
     void print(class Checkbox &checkbox);
     void print(class Radio &radio);
     void println(std::string text);

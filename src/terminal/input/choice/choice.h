@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 
+typedef void function();
+
 typedef enum {
     increase,
     decrease
@@ -26,9 +28,13 @@ public:
     // Getter
     std::string get_name();
     std::string get_description();
+
+    void execute_script();
+    void set_script(function *function);
 private:
     std::string name;
     std::string description;
+    function *script = nullptr;
     bool selected = false;
 };
 
