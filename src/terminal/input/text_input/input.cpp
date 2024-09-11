@@ -14,7 +14,7 @@ Input::~Input() {
 
 
 void Input::display() {
-    terminal->print(TextColor(default_value, DARK_WHITE));
+    terminal->print(TextColor(default_value, BRIGHT_BLACK));
     std::string input_buffer;
     int char_int;
     do {
