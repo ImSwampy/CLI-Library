@@ -70,20 +70,20 @@ void Radio::change_hover(hover_opt option) {
     }
 }
 
-std::optional<Choice> Radio::get_choice(unsigned short choice_index) {
+Choice Radio::get_choice(unsigned short choice_index) {
     if (choice_index < choices.size()) {
         return choices[choice_index];
     }
     return {};
 }
 
-std::optional<Choice> Radio::get_selected() {
+Choice Radio::get_selected() {
     for (auto &choice : choices) {
         if (choice.is_selected()) {
             return choice;
         }
     }
-    return {};
+    return choices[0];
 }
 
 void Radio::set_selection(std::string selected, std::string not_selected) {

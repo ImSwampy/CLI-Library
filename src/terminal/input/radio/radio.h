@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <optional>
 
 #include "../../terminal.h"
 #include "../choice/choice.h"
@@ -22,7 +21,7 @@ public:
     void select(unsigned short choice_index);
     void change_hover(hover_opt option);
 
-    std::optional<Choice> get_choice(unsigned short choice_index);
+    Choice get_choice(unsigned short choice_index);
     std::string get_description();
 
     void set_selection(std::string selected, std::string not_selected);
@@ -49,7 +48,7 @@ private:
     class Terminal *terminal = nullptr;
     void set_parent(class Terminal &_terminal);
     void display_radio();
-    std::optional<Choice> get_selected();
+    Choice get_selected();
 };
 
 

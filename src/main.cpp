@@ -5,7 +5,8 @@
 #include "terminal/input/radio/radio.h"
 
 void script() {
-    std::cout << "kk" << std::endl;
+    std::cout << "ZOZOZOZOZOZO\n\n\n" << std::endl;
+
 }
 
 int main() {
@@ -53,22 +54,20 @@ int main() {
 
     Terminal terminal;
     Radio radio;
-    Input input("Choice 1");
 
     Choice choice1;
     Choice choice2;
     Choice choice3;
 
-    terminal.add(input);
-    input.display();
-    terminal.println(input.get_input());
     choice1.set_name("choice 1");
     choice1.set_description("description 1");
     choice1.set_script(script);
     choice2.set_name("choice 2");
     choice2.set_description("description 2");
+    choice2.set_script(script);
     choice3.set_name("choice 3");
     choice3.set_description("description 3");
+    choice3.set_script(script);
 
     radio.add_choice(choice1);
     radio.add_choice(choice2);
@@ -91,10 +90,10 @@ int main() {
         terminal.clear();
         terminal.print(radio);
     } while (kb_input != Keys::ENTER);
-
     terminal.clear();
 
-    terminal.get_choice(radio)->execute_script();
+    terminal.get_choice(radio).execute_script();
+    Sleep(10000);
 
     std::cin.get();
 }

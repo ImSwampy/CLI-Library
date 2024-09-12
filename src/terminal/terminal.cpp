@@ -45,7 +45,7 @@ std::vector<Choice> Terminal::get_choices(Checkbox &checkbox) {
     return checkbox.get_selected();
 }
 
-std::optional<Choice> Terminal::get_choice(Radio &radio) {
+Choice Terminal::get_choice(Radio &radio) {
     return radio.get_selected();
 }
 

@@ -33,7 +33,7 @@ public:
 private:
     std::string name;
     std::string description;
-    std::function<void()> script;
+    std::function<void()> script = nullptr;
     bool selected = false;
 };
 

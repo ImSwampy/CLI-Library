@@ -26,7 +26,7 @@ public:
     void clear();
     static Keys detect_kb_input();
     std::vector<Choice> get_choices(class Checkbox &checkbox);
-    std::optional<Choice> get_choice(class Radio &radio);
+    Choice get_choice(class Radio &radio);
 
     void add(class Checkbox &checkbox);
     void add(class Radio &radio);

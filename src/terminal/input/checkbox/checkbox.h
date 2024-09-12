@@ -5,7 +5,6 @@
 #include <iostream>
 #include <vector>
 #include <vector>
-#include <optional>
 
 #include "../choice/choice.h"
 #include "../../terminal.h"
