@@ -7,12 +7,11 @@
 
 #define EXTENDED_KEY 224
 
-void Terminal::clear() {
+inline void Terminal::clear() {
     system("cls");
 }
 
 Keys Terminal::detect_kb_input() {
-
     while (true) {
         int ch = _getch();
         if (ch == EXTENDED_KEY) {
@@ -74,3 +73,7 @@ Keys Terminal::detect_kb_input(bool) {
 }
 
 #endif
+
+inline void Terminal::clear() {
+    print("\033c");
+}

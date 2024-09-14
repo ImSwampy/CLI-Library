@@ -4,10 +4,7 @@
 #include "terminal/terminal.h"
 #include "terminal/input/radio/radio.h"
 
-void script() {
-    std::cout << "ZOZOZOZOZOZO\n\n\n" << std::endl;
 
-}
 
 int main() {
     /*
@@ -61,20 +58,17 @@ int main() {
 
     choice1.set_name("choice 1");
     choice1.set_description("description 1");
-    choice1.set_script(script);
     choice2.set_name("choice 2");
     choice2.set_description("description 2");
-    choice2.set_script(script);
     choice3.set_name("choice 3");
     choice3.set_description("description 3");
-    choice3.set_script(script);
 
     radio.add_choice(choice1);
     radio.add_choice(choice2);
     radio.add_choice(choice3);
     radio.display_description(true);
 
-    terminal.add(radio);
+    //terminal.add(radio);
 
     Keys kb_input;
     terminal.print(radio);

@@ -24,7 +24,7 @@ public:
     void print(class Radio &radio);
     void println(std::string text);
     void clear();
-    static Keys detect_kb_input();
+    inline Keys detect_kb_input();
     std::vector<Choice> get_choices(class Checkbox &checkbox);
     Choice get_choice(class Radio &radio);
 
