@@ -23,7 +23,7 @@ public:
     void print(class Checkbox &checkbox);
     void print(class Radio &radio);
     void println(std::string text);
-    void clear();
+    inline void clear();
     inline Keys detect_kb_input();
     std::vector<Choice> get_choices(class Checkbox &checkbox);
     Choice get_choice(class Radio &radio);
