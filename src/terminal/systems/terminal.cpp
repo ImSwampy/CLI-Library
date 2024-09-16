@@ -73,7 +73,3 @@ Keys Terminal::detect_kb_input(bool) {
 }
 
 #endif
-
-inline void Terminal::clear() {
-    print("\033c");
-}
