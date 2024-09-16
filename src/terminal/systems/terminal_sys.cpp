@@ -41,7 +41,7 @@ Keys Terminal::detect_kb_input() {
 #include <unistd.h>
 #include <termios.h>
 
-void Terminal::clear() {
+inline void Terminal::clear() {
     std::cout << "\033c";
 }
 
