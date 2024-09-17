@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <conio.h>
+#include <cstdlib>
 
 #define EXTENDED_KEY 224
 
@@ -41,7 +42,7 @@ Keys Terminal::detect_kb_input() {
 #include <unistd.h>
 #include <termios.h>
 
-void Terminal::clear() {
+inline void Terminal::clear() {
     std::cout << "\033c";
 }
 
@@ -71,5 +72,7 @@ Keys Terminal::detect_kb_input(bool) {
     }
     return Keys::UP;
 }
+
+<<<<<<< HEAD
 
 #endif

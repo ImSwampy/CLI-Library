@@ -7,6 +7,9 @@ endif()
 
 set(CMAKE_CXX_STANDARD 23)
 
+set(CMAKE_C_COMPILER "gcc")
+set(CMAKE_CXX_COMPILER "g++")
+
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll")
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 set(BUILD_SHARED_LIBS OFF)
@@ -14,6 +17,4 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 file (GLOB_RECURSE SOURCES "src/*.cpp")
 
-add_executable(${PROJECT_NAME} ${SOURCES}
-        src/terminal/input/text_input/input.cpp
-        src/terminal/input/text_input/input.h)
+add_executable(${PROJECT_NAME} ${SOURCES})
