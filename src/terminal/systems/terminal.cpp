@@ -7,7 +7,7 @@
 
 #define EXTENDED_KEY 224
 
-inline void Terminal::clear() {
+void Terminal::clear() {
     system("cls");
 }
 
@@ -73,7 +73,3 @@ Keys Terminal::detect_kb_input(bool) {
 }
 
 #endif
-
-inline void Terminal::clear() {
-    print("\033c");
-}
