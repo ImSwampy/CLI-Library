@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <conio.h>
+#include <cstdlib>
 
 #define EXTENDED_KEY 224
 
